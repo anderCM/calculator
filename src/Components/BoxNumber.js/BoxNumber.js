@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 
 const BoxNumber = ({ textContent }) => (
-  <Container className="bg-secondary py-3 text-end">{textContent}</Container>
+<Container className="bg-secondary py-3 text-end">{textContent}</Container>
 );
 
 BoxNumber.propTypes = {
