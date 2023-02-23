@@ -1,15 +1,22 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Calculator from './Components/Calculator';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <h1 className="text-center text-white">Calculator</h1>
-      <Calculator />
-    </div>
-  );
-}
+import NavBar from './Components/Navbar/NavBar';
+import ErrorRoute from './Components/ErrorRoute';
+import Home from './Components/routes/Home/Home';
+import Calculator from './Components/routes/Calculator/Calculator';
+import Quote from './Components/routes/Quote/Quote';
+
+const App = () => (
+  <>
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/calculator" element={<Calculator />} />
+      <Route path="/quote" element={<Quote />} />
+      <Route path="*" element={<ErrorRoute />} />
+    </Routes>
+  </>
+);
 
 export default App;
